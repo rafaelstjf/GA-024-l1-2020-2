@@ -4,14 +4,16 @@
 
 
 int matriz_identidade(int* mat, int n);
+int matriz_identidade(int** mat, int n);
 int main(){
     return 0;
 
 }
-int matriz_identidade(int* mat, int n){
+int matriz_identidade(int** mat, int n){
     /**
      * Percorre a matriz e verifica se é identidade
      */
+    if(mat){
     for(unsigned int i = 0; i < n; i++){
         for(unsigned int j = 0; j < n; j++){
             if(i==j){
@@ -23,4 +25,6 @@ int matriz_identidade(int* mat, int n){
         }
     }
     return 1;
+    }
+    else return 0;
 }
