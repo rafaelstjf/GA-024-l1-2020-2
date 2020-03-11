@@ -9,6 +9,28 @@ int main(){
     return 0;
 
 }
+int matriz_identidade(int* mat, int n){
+    /**
+     * Converter a matriz para representacao linear 
+     * (mat[ i ][ j ] mapeado em v[ k ] onde k = i * n + j)
+     * e verificar se eh identidade
+     */
+    unsigned int index = 0;
+    if(mat){
+        for(unsigned int i = 0; i < n; i++){
+            for(unsigned int j = 0; j < n; j++){
+                index = i * n + j;
+                if(i==j){
+                    if(mat[index] > 1 || mat[index] < 1){
+                        return 0;
+                    }
+                }else if(mat[index] > 0 || mat[index] < 0)
+                    return 0;
+            }
+        }
+        return 1;
+    }else return 0;
+}
 int matriz_identidade(int** mat, int n){
     /**
      * Percorre a matriz e verifica se é identidade
