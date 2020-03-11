@@ -76,16 +76,14 @@ int triangular_superior (int** mat, int n){
     /**
      * Verifica se i > j
      */
-    unsigned int index = 0;
     if(mat){
         for(unsigned int i = 0; i < n; i++){
             for(unsigned int j = 0; j < n; j++){
-                index = i * n + j;
-                if(index >= i*(n + 1)){
-                    if(mat[index] == 0)
+                if(i >= j){
+                    if(mat[i][j] == 0)
                         return 0;
                 }else{
-                    if(mat[index] > 0 || mat[index] < 0)
+                    if(mat[i][j] > 0 || mat[i][j] < 0)
                         return 0;
                 }
             }
