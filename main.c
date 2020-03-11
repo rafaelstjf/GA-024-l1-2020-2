@@ -53,22 +53,41 @@ int matriz_identidade(int** mat, int n){
 }
 int triangular_superior (int* mat, int n){
     /**
-     * Utiliza 2 lacos para verificar a parte superior e a parte inferior da matriz
+     * Utiliza 1 if para verificar a se estah na parte superior e a parte inferior da matriz
      */
     unsigned int index = 0;
     if(mat){
         for(unsigned int i = 0; i < n; i++){
-            for(unsigned int j = i; j < n; j++){
+            for(unsigned int j = 0; j < n; j++){
                 index = i * n + j;
-                if(mat[index] == 0)
-                    return 0;
+                if(i >= j){
+                    if(mat[index] == 0)
+                        return 0;
+                }else{
+                    if(mat[index] > 0 || mat[index] < 0)
+                        return 0;
+                }
             }
         }
-        for(unsigned int i = 1; i < n; i++){
-            for(unsigned int j = 0; j < 1; j++){
+        return 1;
+    }else return 0;
+}
+int triangular_superior (int** mat, int n){
+    /**
+     * Verifica se i > j
+     */
+    unsigned int index = 0;
+    if(mat){
+        for(unsigned int i = 0; i < n; i++){
+            for(unsigned int j = 0; j < n; j++){
                 index = i * n + j;
-                if(mat[index] > 0 || mat[index] < 0)
-                    return 0;
+                if(index >= i*(n + 1)){
+                    if(mat[index] == 0)
+                        return 0;
+                }else{
+                    if(mat[index] > 0 || mat[index] < 0)
+                        return 0;
+                }
             }
         }
         return 1;
