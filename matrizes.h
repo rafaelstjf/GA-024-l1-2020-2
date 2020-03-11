@@ -8,4 +8,7 @@
     int triangular_superior(int** mat, int n);
     int tridiagonal(int* mat, int n);
     int tridiagonal(int** mat, int n);
+    float produto_diagonal(float* mat, int n);
+    float produto_diagonal(float** mat, int n);
+
 #endif

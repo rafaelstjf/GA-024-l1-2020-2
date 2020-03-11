@@ -111,3 +111,23 @@ int tridiagonal(int** mat, int n){
         return 1;
     }else return 0;
 }
+float produto_diagonal(float* mat, int n){
+    unsigned int index;
+    float produto = 1.0;
+    if(mat){
+        for(unsigned int i = 0; i < n; i++){
+            index = i*(n + 1);
+            produto*=mat[i];
+        }
+    }else produto = 0.0;
+    return produto;
+}
+float produto_diagonal(float** mat, int n){
+    float produto = 1.0;
+    if(mat){
+        for(unsigned int i = 0; i < n; i++){
+            produto*=mat[i][i];
+        }
+    }else produto = 0.0;
+    return produto;
+}
