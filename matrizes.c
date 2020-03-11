@@ -131,3 +131,27 @@ float produto_diagonal(float** mat, int n){
     }else produto = 0.0;
     return produto;
 }
+float soma_inferior(float* mat, int n){
+    unsigned int index;
+    float soma = 0.0;
+    if(mat){
+        for(int i = 1; i<n; i++){
+            for(int j = 0; j < i; j++){
+                index = i*n + j;
+                soma+=mat[index];
+            }
+        }
+    }
+    return soma;
+}
+float soma_inferior(float** mat, int n){
+    float soma = 0.0;
+    if(mat){
+        for(int i = 1; i<n; i++){
+            for(int j = 0; j < i; j++){
+                soma+=mat[i][j];
+            }
+        }
+    }
+    return soma;
+}

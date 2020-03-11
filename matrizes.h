@@ -10,5 +10,7 @@
     int tridiagonal(int** mat, int n);
     float produto_diagonal(float* mat, int n);
     float produto_diagonal(float** mat, int n);
+    float soma_inferior(float* mat, int n);
+    float soma_inferior(float** mat, int n);
 
 #endif
