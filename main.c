@@ -6,6 +6,7 @@
 int matriz_identidade(int* mat, int n);
 int matriz_identidade(int** mat, int n);
 int triangular_superior (int* mat, int n);
+int triangular_superior (int** mat, int n);
 int main(){
     return 0;
 
