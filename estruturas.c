@@ -1,5 +1,15 @@
 #include "estruturas.h"
 
+struct lista {
+    char nome[81];
+    int matricula;
+    char turma;
+    float p1;
+    float p2;
+    float p3;
+    struct lista* prox;
+};
+
 Lista* insere_ord(Lista* l, char* nome, int matricula, char turma, float p1, float p2, float p3){
     Lista* n = (Lista*)malloc(sizeof(Lista));
     for(unsigned int i = 0; i < 81; i++){
