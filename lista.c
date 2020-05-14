@@ -1,4 +1,4 @@
-#include "estruturas.h"
+#include "lista.h"
 
 struct lista {
     char nome[81];

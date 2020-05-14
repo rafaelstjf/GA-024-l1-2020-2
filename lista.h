@@ -1,5 +1,5 @@
-#ifndef ESTRUTURAS_H
-#define ESTRUTURAS_H
+#ifndef LISTA_H
+#define LISTA_H
 #include <stdio.h>
 #include <stdlib.h>
 

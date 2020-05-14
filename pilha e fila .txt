@@ -1,0 +1,31 @@
+typedef struct pilha Pilha;
+Pilha *cria(void);
+void push(Pilha *p, float v);
+float pop(Pilha *p);
+int vazia(Pilha *p);
+void libera(Pilha *p);
+
+void concatena_pilhas(Pilha *p1, Pilha *p2)
+{
+    while(!vazia(p2)){
+        push(p1, pop(p2));
+    }
+}
+
+typedef struct fila Fila;
+Fila* cria(void);
+void insere (Fila* f, float v);
+float retira (Fila* f);
+int vazia (Fila* f);
+void libera (Fila* f);
+
+void combina_filas (Fila* f_res, Fila* f1, Fila* f2){
+    while(!vazia(f1) && !vazia(f2)){
+        insere(f_res, retira(f1));
+        insere(f_res, retira(f2));
+    }
+    while(!vazia(f1))
+        insere(f_res, retira(f1));
+    while(!vazia(f2))
+        insere(f_res, retira(f2));
+}
